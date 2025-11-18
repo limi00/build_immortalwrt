@@ -149,7 +149,7 @@ jobs:
         name: OpenWrt_firmware${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
         path: ${{ env.FIRMWARE }}
 
-    - name: List firmware files
+    - name: 列出固件文件
       run: ls ${{ env.FIRMWARE }}
 
     - name: 自动发布固件到 Releases
