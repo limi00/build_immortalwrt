@@ -40,13 +40,13 @@ function git_sparse_clone() {
 # 添加passwall2
 # git clone https://github.com/xiaorouji/openwrt-passwall2.git package/luci-app-passwall2
 #编译lucky
-#git clone https://github.com/sirpdboy/luci-app-lucky.git package/lucky
+git clone https://github.com/sirpdboy/luci-app-lucky.git package/lucky
 # 编译固件
 #make package/lucky/luci-app-lucky/compile V=s        
 #编译OpenAppFilter
 git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter  
 #编译partexp分区扩容
-#git clone https://github.com/sirpdboy/luci-app-partexp.git package/luci-app-partexp
+git clone https://github.com/sirpdboy/luci-app-partexp.git package/luci-app-partexp
 # 编译固件
 #make package/luci-app-partexp/compile V=s        
 #编译mosdns
@@ -68,7 +68,7 @@ git clone --depth=1 https://github.com/lmq8267/luci-app-vnt.git package/vnt
 #解决日志错误问题
 #sed -i 's/util/xml/g' /usr/lib/lua/luci/model/cbi/vnt.lua
 # 添加应用过滤
-# git clone  https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
+git clone  https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
 #加入turboacc
 #curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh
 #chmod -R 777 add_turboacc.sh
