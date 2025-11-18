@@ -1,4 +1,4 @@
-name: openwrt-builder
+name: immortalwrt-r3g
 
 on:
   repository_dispatch:
