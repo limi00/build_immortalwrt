@@ -39,6 +39,34 @@ function git_sparse_clone() {
 #git clone https://github.com/VPN-V2Ray/luci-app-poweroff.git package/luci-app-poweroff
 # 添加passwall2
 # git clone https://github.com/xiaorouji/openwrt-passwall2.git package/luci-app-passwall2
+#编译lucky
+#git clone https://github.com/sirpdboy/luci-app-lucky.git package/lucky
+# 编译固件
+#make package/lucky/luci-app-lucky/compile V=s        
+#编译OpenAppFilter
+git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter  
+#编译partexp分区扩容
+#git clone https://github.com/sirpdboy/luci-app-partexp.git package/luci-app-partexp
+# 编译固件
+#make package/luci-app-partexp/compile V=s        
+#编译mosdns
+# drop mosdns and v2ray-geodata packages that come with the source
+#find ./ | grep Makefile | grep v2ray-geodata | xargs rm -f
+#find ./ | grep Makefile | grep mosdns | xargs rm -f
+#git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
+#git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata        
+#编译turboacc
+#curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh        
+#编译vnt
+git clone --depth=1 https://github.com/lmq8267/luci-app-vnt.git package/vnt
+# 编译固件
+#make package/vnt/luci-app-vnt/compile V=s
+#客户端程序
+#make package/vnt/vnt/compile V=s
+#服务端程序
+#make package/vnt/vnts/compile V=s
+#解决日志错误问题
+#sed -i 's/util/xml/g' /usr/lib/lua/luci/model/cbi/vnt.lua
 # 添加应用过滤
 # git clone  https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
 #加入turboacc
@@ -53,9 +81,9 @@ echo "
 
 CONFIG_PACKAGE_luci-theme-argon=y
 
-CONFIG_PACKAGE_luci-theme-material=y
+#CONFIG_PACKAGE_luci-theme-material=y
 
-CONFIG_PACKAGE_luci-theme-openwrt-2020=y
+#CONFIG_PACKAGE_luci-theme-openwrt-2020=y
 
 #CONFIG_PACKAGE_luci-theme-alpha=y
 
@@ -74,16 +102,17 @@ CONFIG_PACKAGE_luci-theme-openwrt-2020=y
 " >> .config
 
 # 修改默认IP
-sed -i 's/192.168.1.1/10.0.0.1/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/192.168.31.1/g' package/base-files/files/bin/config_generate
 
 # 修改默认子网掩码
-sed -i 's/255.255.255.0/255.255.252.0/g' package/base-files/files/bin/config_generate
+#sed -i 's/255.255.255.0/255.255.252.0/g' package/base-files/files/bin/config_generate
 
 # 修改默认主题
 #sed -i 's/luci-theme-openwrt-2020/luci-theme-alpha/g' feeds/luci/collections/luci/Makefile
 
 # 修改主机名
-sed -i 's/ImmortalWrt/OpenWrt/g' package/base-files/files/bin/config_generate
+#sed -i 's/ImmortalWrt/OpenWrt/g' package/base-files/files/bin/config_generate
+sed -i 's/ImmortalWrt/XiaoMi_R3G/g' package/base-files/files/bin/config_generate
 
 # 修改Ping 默认网址 immortalwrt.org
 #cat feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_network/diagnostics.htm
