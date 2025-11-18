@@ -94,10 +94,10 @@ CONFIG_PACKAGE_luci-theme-argon=y
 #CONFIG_PACKAGE_luci-app-pushbot=y
 
 # TurboAcc
-#CONFIG_PACKAGE_luci-app-turboacc=y
+CONFIG_PACKAGE_luci-app-turboacc=y
 
 # 应用过滤
-# CONFIG_PACKAGE_luci-app-oaf=y
+CONFIG_PACKAGE_luci-app-oaf=y
 
 " >> .config
 
