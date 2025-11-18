@@ -150,28 +150,26 @@ jobs:
         path: ${{ env.FIRMWARE }}
 
     - name: 生成发布标签
-      id: tag
-      if: steps.compile.outputs.status == 'success' && env.UPLOAD_RELEASE == 'true' && !cancelled()
-      run: |
-        echo "release_tag=$(date +"%Y.%m.%d-%H.%M")" >> ${GITHUB_OUTPUT}
-        touch release.txt
-        echo "
-        💻 架构: x86-64
-
-        📂 源码: ${{ env.REPO_URL }}
-
-        🌳 分支: ${{ env.REPO_BRANCH }}
-
-        ⏱️ 编译时间: $(date +"%Y年%m月%d日%H时%M分")
-
-        🌐 管理地址: 10.0.0.1 , 子网掩码: 255.255.252.0
-
-        👤 用户名: root
-
-        🔒 密码: 空 
-        
-        " >> release.txt
-        echo "status=success" >> ${GITHUB_OUTPUT}
+      id: release
+      uses: ncipollo/release-action@main
+      if: steps.organize.outputs.status == 'success' && env.UPLOAD_RELEASE == 'true' && !cancelled()
+      with:
+        name: R${{ steps.organize.outputs.release_tag }} for MI-R3G
+        allowUpdates: true
+        removeArtifacts: true
+        tag: ${{ steps.organize.outputs.release_tag }}
+        commit: main
+        token: ${{ secrets.GITHUB_TOKEN }}
+        artifacts: ${{ env.FIRMWARE }}/*
+        body: |
+          - 默认IP：192.168.31.1
+          - 默认密码：password
+          - 当前使用版本:【编译前的最后一次[➦主源码](${{ env.REPO_URL }})更新记录】
+          - 下载后请仔细校验MD5，如不正确请重新下载
+          ${{ env.useVersionInfo }}
+          
+          `md5sum`
+          > ${{ env.MD5 }}
 
     - name: List firmware files
       run: ls ${{ env.FIRMWARE }}
