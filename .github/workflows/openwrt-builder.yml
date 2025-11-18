@@ -72,7 +72,7 @@ jobs:
       uses: stupidloud/cachewrtbuild@main
       with:
         ccache: 'true'
-        mixkey: x86-64-${{ env.REPO_BRANCH }}
+        mixkey: ramips-${{ env.REPO_BRANCH }}
         prefix: ${{ github.workspace }}/openwrt
 
     - name: 加载自定义 feeds
