@@ -31,6 +31,10 @@ function git_sparse_clone() {
 #git clone -b js --single-branch https://github.com/gngpp/luci-theme-design package/luci-theme-design
 # git clone https://github.com/derisamedia/luci-theme-alpha.git package/luci-theme-alpha
 
+#编译openlist
+rm -rf feeds/packages/lang/golang
+git clone https://github.com/sbwml/packages_lang_golang -b 23.x feeds/packages/lang/golang
+git clone https://github.com/sbwml/luci-app-openlist2 package/openlist
 # 添加测速插件
 # git clone https://github.com/sirpdboy/netspeedtest.git package/netspeedtest
 # 添加 万能推送
