@@ -13,7 +13,7 @@
 
 # 移除要替换的包
 #rm -rf feeds/packages/net/v2ray-geodata
-rm -rf feeds\luci\applications\luci-app-turboacc
+#rm -rf feeds\luci\applications\luci-app-turboacc
 
 # Git稀疏克隆，只克隆指定目录到本地
 function git_sparse_clone() {
