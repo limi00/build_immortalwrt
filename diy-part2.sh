@@ -78,10 +78,9 @@ git clone --depth=1 https://github.com/lmq8267/luci-app-vnt.git package/vnt
 # 添加应用过滤
 git clone  https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
 #加入turboacc
-curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh
-#curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh
-#chmod -R 777 add_turboacc.sh
-#bash add_turboacc.sh --no-sfe
+curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh
+chmod -R 777 add_turboacc.sh
+bash add_turboacc.sh
 
 
 echo "
