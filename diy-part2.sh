@@ -13,6 +13,7 @@
 
 # 移除要替换的包
 #rm -rf feeds/packages/net/v2ray-geodata
+rm -rf feeds\luci\applications\luci-app-turboacc
 
 # Git稀疏克隆，只克隆指定目录到本地
 function git_sparse_clone() {
@@ -77,6 +78,7 @@ git clone --depth=1 https://github.com/lmq8267/luci-app-vnt.git package/vnt
 # 添加应用过滤
 git clone  https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
 #加入turboacc
+curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh
 #curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh
 #chmod -R 777 add_turboacc.sh
 #bash add_turboacc.sh --no-sfe
