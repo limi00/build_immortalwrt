@@ -31,6 +31,9 @@ function git_sparse_clone() {
 #git clone -b js --single-branch https://github.com/gngpp/luci-theme-design package/luci-theme-design
 # git clone https://github.com/derisamedia/luci-theme-alpha.git package/luci-theme-alpha
 
+编译tailscale
+sed -i '/\/etc\/init\.d\/tailscale/d;/\/etc\/config\/tailscale/d;' feeds/packages/net/tailscale/Makefile
+git clone https://github.com/asvow/luci-app-tailscale package/luci-app-tailscale
 #编译openlist
 rm -rf feeds/packages/lang/golang
 git clone https://github.com/sbwml/packages_lang_golang -b 23.x feeds/packages/lang/golang
