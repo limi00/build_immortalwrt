@@ -49,8 +49,8 @@ git clone https://github.com/sbwml/luci-app-openlist2 package/openlist
 # git clone https://github.com/xiaorouji/openwrt-passwall2.git package/luci-app-passwall2
 添加vssr
 #git clone --depth 1 https://github.com/fw876/helloworld package/helloworld
-git clone https://github.com/jerrykuku/lua-maxminddb.git  #git lua-maxminddb
-git clone https://github.com/jerrykuku/luci-app-vssr.git  
+#git clone https://github.com/jerrykuku/lua-maxminddb.git  #git lua-maxminddb
+#git clone https://github.com/jerrykuku/luci-app-vssr.git  
 #编译lucky
 git clone https://github.com/sirpdboy/luci-app-lucky.git package/lucky
 # 编译固件
