@@ -47,6 +47,9 @@ git clone https://github.com/sbwml/luci-app-openlist2 package/openlist
 #git clone https://github.com/VPN-V2Ray/luci-app-poweroff.git package/luci-app-poweroff
 # 添加passwall2
 # git clone https://github.com/xiaorouji/openwrt-passwall2.git package/luci-app-passwall2
+添加vssr
+git clone https://github.com/jerrykuku/lua-maxminddb.git
+git clone https://github.com/jerrykuku/luci-app-vssr.git
 #编译lucky
 git clone https://github.com/sirpdboy/luci-app-lucky.git package/lucky
 # 编译固件
@@ -62,9 +65,7 @@ git clone https://github.com/sirpdboy/luci-app-partexp.git package/luci-app-part
 #find ./ | grep Makefile | grep v2ray-geodata | xargs rm -f
 #find ./ | grep Makefile | grep mosdns | xargs rm -f
 #git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
-#git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata        
-#编译turboacc
-#curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh        
+#git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata    
 #编译vnt
 git clone --depth=1 https://github.com/lmq8267/luci-app-vnt.git package/vnt
 # 编译固件
